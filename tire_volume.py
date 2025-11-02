@@ -1,5 +1,4 @@
 #Improvements: I created a separate file with the calculation so I can simply call the function later.
-#Improvements: 
 import datetime
 import math
 
@@ -16,11 +15,11 @@ if volumes <= 35:
     print(f"Volume of the tire is {volumes:.2f} liters, so the recommended pressure is '30-33 psi'.")
 elif 36 <= volumes <= 45:
     print(f"Volume of the tire is {volumes:.2f} liters, so the recommended pressure is '34-37 psi'.")
-elif 46 >= volumes <= 55:
+elif 46 <= volumes <= 55:
     print(f"Volume of the tire is {volumes:.2f} liters, so the recommended pressure is '38-41 psi'.")
 else:
     print(f"Volume of the tire is {volumes:.2f} liters, so the recommended pressure is '42-48 psi'.")
-current_date = datetime.datetime.today().strftime("%d/%m/%y")
+current_date = datetime.datetime.today().strftime("%Y-%m-%d")
 
 line = (
     f"{current_date}, "
@@ -31,5 +30,5 @@ line = (
 )
 
 
-with open("volumes.txt", "at") as volumes_file:
+with open("volumes.txt", "a") as volumes_file:
     volumes_file.write(line)
